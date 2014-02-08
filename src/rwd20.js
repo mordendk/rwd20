@@ -54,7 +54,7 @@ angular.module('rwd20', [])
 				},
 				resizeHandler = debounce(function(){
 					$rootScope.$apply(function(){
-						$rootScope.$broadcast('responsiveWidthChange', document.documentElement.clientWidth);
+						$rootScope.$broadcast('responsiveWidthChange', window.innerWidth);
 					});
 				}, 500);
 
@@ -71,13 +71,13 @@ angular.module('rwd20', [])
 					}
 
 					var isActive = false,
-						clientWidth = document.documentElement.clientWidth;
+						width = window.innerWidth;
 
 					for (var i = 0, len = arrayOfBreakpointNames.length; i < len; i++) {
 						var name = arrayOfBreakpointNames[i],
 							breakpoint = breakpoints[name];
 
-						if(breakpoint && breakpoint.min <= clientWidth && breakpoint.max >= clientWidth){
+						if(breakpoint && breakpoint.min <= width && breakpoint.max >= width){
 							isActive = true;
 							break;
 						}
