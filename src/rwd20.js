@@ -53,7 +53,9 @@ angular.module('rwd20', [])
 					};
 				},
 				resizeHandler = debounce(function(){
-					$rootScope.$broadcast('responsiveWidthChange', document.documentElement.clientWidth);
+					$rootScope.$apply(function(){
+						$rootScope.$broadcast('responsiveWidthChange', document.documentElement.clientWidth);
+					});
 				}, 500);
 
 			window.onresize = window.onorientationchange = resizeHandler;
