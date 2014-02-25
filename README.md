@@ -37,7 +37,7 @@ Download and include module:
  </section>
  ```
 
-For full effect, the responsive-breakpoint directive should be used in combination with others, see the [https://github.com/mordendk/rwd20-demo](code for the demo site for more detail).
+For full effect, the responsive-breakpoint directive should be used in combination with others, see the [code for the demo site](https://github.com/mordendk/rwd20-demo) for more detail.
 
 
 
