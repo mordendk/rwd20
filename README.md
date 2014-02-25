@@ -3,11 +3,42 @@ Responsive Web Design 2.0
 
 Responsive breakpoints for AngularJS applications - enables/disables functionality entirely instead of the traditional show/hide.
 
-**See demo implementation: [http://jsallthethings.com/dev/rwd20-demo/](http://jsallthethings.com/dev/rwd20-demo/)**
+**See demo: [http://jsallthethings.com/dev/rwd20-demo/](http://jsallthethings.com/dev/rwd20-demo/)**
 
 Scale the window from phone over tablet to desktop size and see elements created and resources loaded dynamically.
 
-The demo code is up here: [https://github.com/mordendk/rwd20-demo](https://github.com/mordendk/rwd20-demo)
+
+
+Usage
+-----
+
+Download and include module:
+
+ ```javascript
+ var app = angular.module('app', ['rwd20']);
+ ```
+
+ Set up breakpoints matching your CSS:
+
+ ```javascript
+ app.config(['responsiveServiceProvider', function(responsiveServiceProvider) {
+	responsiveServiceProvider.addBreakpoint('small',0, 600);
+	responsiveServiceProvider.addBreakpoint('medium', 600, 960);
+	responsiveServiceProvider.addBreakpoint('large', 960, 1600);
+	responsiveServiceProvider.addBreakpoint('xlarge', 1600, 99999);
+}]);
+ ```
+
+ Assign the breakpoints to your DOM:
+
+ ```html
+ <section class="related-column" responsive-breakpoint="'large'">
+ 	<!-- Element only initialized when 960 < window.innerWidth <= 1600 -->
+ </section>
+ ```
+
+For full effect, the responsive-breakpoint directive should be used in combination with others, see the [https://github.com/mordendk/rwd20-demo](code for the demo site for more detail).
+
 
 
 What do we want to achieve?
