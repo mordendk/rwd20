@@ -22,6 +22,16 @@ angular.module('rwd20', [])
 				getTime = (Date.now || function() {
 					return new Date().getTime();
 				}),
+				safeApply = function(scope, fn) {
+					var phase = scope.$root.$$phase;
+					if (phase == '$apply' || phase == '$digest') {
+						if (fn && (typeof(fn) === 'function')) {
+							fn();
+						}
+					} else {
+						scope.$apply(fn);
+					}
+				},
 				debounce = function(func, wait, immediate) {
 					var timeout, args, context, timestamp, result;
 					return function() {
@@ -48,12 +58,11 @@ angular.module('rwd20', [])
 							result = func.apply(context, args);
 							context = args = null;
 						}
-
 						return result;
 					};
 				},
 				resizeHandler = debounce(function(){
-					$rootScope.$apply(function(){
+					safeApply($rootScope, function(){
 						$rootScope.$broadcast('responsiveWidthChange', window.innerWidth);
 					});
 				}, 500);
@@ -153,7 +162,6 @@ angular.module('rwd20', [])
 							}
 						}
 
-						//console.log(breakPoints + ' is ' + responsive.isActiveBreakpoint(normalizedBreakPoints));
 					};
 
 				$scope.$watch($attr.responsiveBreakpoint, responsiveBreakpointWatchAction);

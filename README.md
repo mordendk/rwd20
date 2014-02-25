@@ -3,9 +3,11 @@ Responsive Web Design 2.0
 
 Responsive breakpoints for AngularJS applications - enables/disables functionality entirely instead of the traditional show/hide.
 
-See demo implementation: [http://jsallthethings.com/dev/rwd20-demo/](http://jsallthethings.com/dev/rwd20-demo/).
+**See demo implementation: [http://jsallthethings.com/dev/rwd20-demo/](http://jsallthethings.com/dev/rwd20-demo/)**
 
 Scale the window from phone over tablet to desktop size and see elements created and resources loaded dynamically.
+
+The demo code is up here: [https://github.com/mordendk/rwd20-demo](https://github.com/mordendk/rwd20-demo)
 
 
 What do we want to achieve?
