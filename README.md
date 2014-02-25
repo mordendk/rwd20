@@ -13,13 +13,11 @@ Usage
 -----
 
 Download and include module:
-
  ```javascript
  var app = angular.module('app', ['rwd20']);
  ```
 
  Set up breakpoints matching your CSS:
-
  ```javascript
  app.config(['responsiveServiceProvider', function(responsiveServiceProvider) {
 	responsiveServiceProvider.addBreakpoint('small',0, 600);
@@ -30,7 +28,6 @@ Download and include module:
  ```
 
  Assign the breakpoints to your DOM:
-
  ```html
  <section class="related-column" responsive-breakpoint="'large'">
  	<!-- Element only initialized when 960 < window.innerWidth <= 1600 -->
