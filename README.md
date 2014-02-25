@@ -68,11 +68,3 @@ Basically for each component we need to define:
 
 
 AngularJS will give us almost all we need to contain these on a per element basis in a structured way.
-
-
-**Server side logic**
-
-For common data sources like catalogs, we are close to achieving this today. On most solutions we are already serving this as JSON from just a few service endpoints.
-
-
-I guess the hardest part will be turning Umbraco into a JSON source, being able to serve both content and rich elements in the bits and peices that are needed, while maintaining a proper flow for content editors. If we focus backend work on honoring this, perhaps we could also get the benefit of turning the CMS part of our solutions into single page application - as we already do on most catalog browsing - sounds like a win-win.
